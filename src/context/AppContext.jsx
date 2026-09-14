@@ -11,7 +11,7 @@ function AppContextProvider({children}) {
             const token = localStorage.getItem("token");
 
             const response = await fetch(
-                "http://localhost:5000/api/tickets",
+                `${import.meta.env.VITE_API_URL}/api/tickets`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -44,7 +44,7 @@ function AppContextProvider({children}) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            "http://localhost:5000/api/tickets",
+            `${import.meta.env.VITE_API_URL}/api/tickets`,
             {
                 method: "POST",
                 headers: {
@@ -80,7 +80,7 @@ function AppContextProvider({children}) {
             const token = localStorage.getItem("token");
 
             const response = await fetch(
-                `http://localhost:5000/api/tickets/${ticketId}`,
+                `${import.meta.env.VITE_API_URL}/api/tickets/${ticketId}`,
                 {
                     method: "PUT",
                     headers: {
@@ -124,7 +124,7 @@ function AppContextProvider({children}) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:5000/api/tickets/${ticketId}`,
+            `${import.meta.env.VITE_API_URL}/api/tickets/${ticketId}`,
             {
                 method: "DELETE",
                 headers: {
